@@ -19,6 +19,8 @@ const Navbar = () => {
             <li><Link href="/restaurants">Restaurants</Link></li>
             <li><Link href="/offers">Offers</Link></li>
             <li><Link href="/orders">Orders</Link></li>
+            <li><Link href="/login">Login</Link></li>
+            <li><Link href="/register">Register</Link></li>
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl font-bold text-primary">
@@ -32,6 +34,8 @@ const Navbar = () => {
           <li><Link href="/restaurants">Browse Food</Link></li>
           <li><Link href="/offers">Flash Sales</Link></li>
           <li><Link href="/contact">Support</Link></li>
+          <li><Link href="/login">Login</Link></li>
+          <li><Link href="/register">Register</Link></li>
         </ul>
       </div>
 
