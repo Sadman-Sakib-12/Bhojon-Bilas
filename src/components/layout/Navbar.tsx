@@ -1,9 +1,16 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ShoppingCart, User, Search, Menu, Bell } from 'lucide-react';
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/dashboard')) {
+    return null;
+  }
+
   return (
     <div className="navbar bg-base-100 shadow-md px-2 md:px-8 sticky top-0 z-50">
       {/* Mobile Menu & Logo */}
@@ -22,7 +29,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl font-bold text-primary">
-          FoodExpress
+          FoodDash
         </Link>
       </div>
 
@@ -40,10 +47,10 @@ const Navbar = () => {
         {/* Search Bar (Hidden on small screens) */}
         <div className="form-control hidden md:block">
           <div className="relative">
-            <input 
-              type="text" 
-              placeholder="Search food..." 
-              className="input input-bordered w-24 md:w-auto h-10 pl-10" 
+            <input
+              type="text"
+              placeholder="Search food..."
+              className="input input-bordered w-24 md:w-auto h-10 pl-10"
             />
             <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
           </div>
@@ -76,7 +83,7 @@ const Navbar = () => {
             </div>
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 border">
-            <li><Link href="/dashboard" className="justify-between">Dashboard <span className="badge badge-secondary">New</span></Link></li>
+            <li><Link href="/dashboard/admin" className="justify-between">Dashboard <span className="badge badge-secondary">New</span></Link></li>
             <li><Link href="/profile">Settings</Link></li>
             <li><button className="text-error font-semibold">Logout</button></li>
           </ul>
