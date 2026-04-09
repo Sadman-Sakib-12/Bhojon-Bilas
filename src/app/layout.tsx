@@ -1,7 +1,9 @@
+// src/app/layout.tsx
 import type { Metadata } from 'next';
 import React from 'react';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
+import { ReduxProvider } from '@/redux/Provider';
 
 export const metadata: Metadata = {
   title: 'Food Delivery App',
@@ -16,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
+        <ReduxProvider>
+          <Navbar />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
