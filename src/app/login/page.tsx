@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaGoogle, FaLinkedin } from 'react-icons/fa';
 
@@ -83,9 +84,9 @@ const LoginPage = () => {
 
 
 
-              <p className="mt-6 text-[11px] text-gray-400">
+              <Link href="/register" className="mt-6 text-[11px] text-gray-400">
                 Don't have an account? <span className="text-orange-500 font-bold cursor-pointer hover:underline">Sign up</span>
-              </p>
+              </Link>
             </div>
 
           </div>
